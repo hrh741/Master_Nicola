@@ -22,6 +22,31 @@ pindG = p(jG,:); % for the sake of plotting
 Hnode_no = setdiff(jH, jG);
 pHnode_no = p(Hnode_no,:); % for the sake of plotting
 
+%%
+figure; hold on;
+for ng = 1:size(holes,1)
+    xnode = holes{ng,1};
+    for inh=1:size(xnode,1)
+        plot(xnode(inh,1),xnode(inh,2),'ro','LineWidth',1);
+        pause
+    end
+%     plot(xnode(:,1),xnode(:,2),'b.','LineWidth',1);
+end
+
+%%
+figure; hold on;
+for inh=1:size(Svoid,1)
+    plot(p(Svoid(inh),1),p(Svoid(inh),2),'ro','LineWidth',1);
+    pause
+end
+
+%%
+figure; hold on;
+for ng = 1:size(holes,1)
+    xnode = holes{ng,1};
+    plot(xnode(:,1),xnode(:,2),'b.','LineWidth',1);
+end
+plot(p(Svoid,1),p(Svoid,2),'ro','LineWidth',1);
 
 %%
 figure; hold on; axis equal;
