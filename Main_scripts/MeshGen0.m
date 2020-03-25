@@ -140,15 +140,15 @@ nodeSurfaceVoid1= [];
 nodeSurfacef = [];
 
     %  finding nodes on the surface of Void
-%     for ng = 1:ngr
-%         holeind=find([holes{:,2}]'==ng);
-%         for i_h=1:length(holeind)
-%             Hn = holes{holeind(i_h),1}; % hole nodes
-%             fd1 = dpolySW(p,Hn);
-%         end
-%         nodeSurfaceVoid1 = find(abs(fd1)<=1e-8);
-%         nodeSurfaceVoid = [nodeSurfaceVoid; nodeSurfaceVoid1];
-%     end
+    for ng = 1:ngr
+        holeind=find([holes{:,2}]'==ng);
+        for i_h=1:length(holeind)
+            Hn = holes{holeind(i_h),1}; % hole nodes
+            fd1 = dpolySW(p,Hn);
+            nodeSurfaceVoid1 = find(abs(fd1)<=1e-8);
+            nodeSurfaceVoid = [nodeSurfaceVoid; nodeSurfaceVoid1];
+        end
+    end
 
 nodeSurfacef = [nodeSurface; nodeSurfaceVoid]; % just for plotting
 % Surface nodes of sample and voids
